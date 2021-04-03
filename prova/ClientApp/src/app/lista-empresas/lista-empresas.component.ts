@@ -13,12 +13,18 @@ export class ListaEmpresasComponent implements OnInit {
 
   empresa = {} as Empresa;
   empresas: Empresa[];
+  displayedColumns: string[] = ['Id', 'Nome', 'CNPJ', 'Endereco', 'Email'];
+  dataSource;
 
   constructor(private apiServices: ApiService) { }
 
   ngOnInit() {
     this.getEmpresas();
   }
+
+  //teste
+
+
 
 
   // defini se um carro será criado ou atualizado
@@ -37,7 +43,8 @@ export class ListaEmpresasComponent implements OnInit {
   // Chama o serviço para obtém todas as empresas
   getEmpresas() {
     this.apiServices.getEmpresa().subscribe((empresas: Empresa[]) => {
-      this.empresas = empresas;
+      console.log(empresas)
+      this.dataSource = empresas;
     });
   }
 

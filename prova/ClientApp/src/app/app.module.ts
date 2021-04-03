@@ -14,6 +14,7 @@ import { CriaEmpresasComponent } from './cria-empresas/cria-empresas.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table'
 
 
 
@@ -33,6 +34,7 @@ import { MatInputModule } from '@angular/material/input';
     FormsModule,
     BrowserAnimationsModule,
     MatInputModule,
+    MatTableModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
