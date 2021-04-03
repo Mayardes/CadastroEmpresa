@@ -1,23 +1,26 @@
 <p>Cadastro</p>
 
+<mat-toolbar>
+  <h1>Conteúdo do toolbar!</h1>
+</mat-toolbar>
+
 <form #empresaPost="ngForm" (ngSubmit)="onSubmit(empresaPost.value)">
 
+  <div class="form-group">
+    <input type="text" class="form-control" name="nome" ngModel placeholder="Nome" />
+  </div>
 
-    <div class="form-group">
-      <input type="text" class="form-control" name="nome" ngModel placeholder="Nome"/>
-    </div>
+  <div class="form-group">
+    <input type="text" class="form-control" name="cnpj" ngModel placeholder="CNPJ" />
+  </div>
 
-    <div class="form-group">
-      <input type="text" class="form-control" name="cnpj" ngModel placeholder="CNPJ"/>
-    </div>
+  <div class="form-group">
+    <input type="text" class="form-control" name="endereco" ngModel placeholder="Endereco" />
+  </div>
 
-    <div class="form-group">
-    <input type="text" class="form-control" name="endereco" ngModel placeholder="Endereco"/>
-    </div>
-
-    <div class="form-group">
-      <input type="text" class="form-control" name="email" ngModel placeholder="email"/>
-    </div>
+  <div class="form-group">
+    <input type="text" class="form-control" name="email" ngModel placeholder="email" />
+  </div>
 
   <button class="btn btn-primary">Salvar</button>
 </form>
