@@ -13,7 +13,7 @@ export class ListaEmpresasComponent implements OnInit {
 
   empresa = {} as Empresa;
   empresas: Empresa[];
-  displayedColumns: string[] = ['Id', 'Nome', 'CNPJ', 'Endereco', 'Email'];
+  displayedColumns: string[] = ['Id', 'Nome', 'CNPJ', 'Endereco', 'Email', 'Excluir', 'Alterar'];
   dataSource;
 
   constructor(private apiServices: ApiService) { }
