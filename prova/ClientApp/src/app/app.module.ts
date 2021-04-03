@@ -13,7 +13,7 @@ import { ListaEmpresasComponent } from './lista-empresas/lista-empresas.componen
 import { CriaEmpresasComponent } from './cria-empresas/cria-empresas.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -32,7 +32,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
+    MatInputModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
