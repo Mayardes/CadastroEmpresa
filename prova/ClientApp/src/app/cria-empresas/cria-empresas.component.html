@@ -9,7 +9,7 @@
 
   <mat-form-field class="example-full-width">
     <mat-label>CNPJ</mat-label>
-    <input matInput ngModel placeholder="Ex. 11.366.803/0001-80" name="cnpj" >
+    <input matInput ngModel placeholder="Ex. 11.366.803/0001-80" name="cnpj">
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
@@ -22,6 +22,11 @@
     <input matInput ngModel placeholder="Ex. joseanefelintojfa@gmail.com" name="email">
   </mat-form-field>
 
-  <button type="submit" class="btn btn-primary">Salvar</button>
-</form>
+  <button class="btn btn-primary" type="submit">
+    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden="hidden" id="spinner"></span>
+    Salvar
+  </button>
 
+
+
+</form>

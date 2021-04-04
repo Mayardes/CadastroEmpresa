@@ -23,7 +23,7 @@ export class ApiService {
   getEmpresa(): Observable<Empresa[]> {
     return this.httpClient.get<Empresa[]>(this.url)
       .pipe(
-        retry(2),
+        retry(0),
         catchError(this.handleError));
   }
 
@@ -31,7 +31,7 @@ export class ApiService {
   getEmpresaById(id: number): Observable<Empresa> {
     return this.httpClient.get<Empresa>(this.url + '/' + id)
       .pipe(
-        retry(2),
+        retry(0),
         catchError(this.handleError)
       );
   }
@@ -40,7 +40,7 @@ export class ApiService {
   saveEmpresa(empresa: Empresa): Observable<Empresa> {
     return this.httpClient.post<Empresa>(this.url, JSON.stringify(empresa), this.httpOptions)
       .pipe(
-        retry(2),
+        retry(0),
         catchError(this.handleError)
       );
   }
@@ -49,7 +49,7 @@ export class ApiService {
   updateEmpresa(empresa: Empresa): Observable<Empresa> {
     return this.httpClient.put<Empresa>(this.url + '/' + empresa.id, JSON.stringify(empresa), this.httpOptions)
       .pipe(
-        retry(1),
+        retry(0),
         catchError(this.handleError)
       );
   }
@@ -58,7 +58,7 @@ export class ApiService {
   deleteEmpresa(id: number) {
     return this.httpClient.delete<Empresa>(this.url + '/' + id, this.httpOptions)
       .pipe(
-        retry(1),
+        retry(0),
         catchError(this.handleError)
       );
   }
