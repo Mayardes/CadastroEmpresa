@@ -72,7 +72,7 @@ export class ListaEmpresasComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      this.getEmpresas();
     });
   }
 

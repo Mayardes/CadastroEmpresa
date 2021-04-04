@@ -30,8 +30,6 @@ export class DialogExcluirComponent{
   onYesClick(id): void {
     this.apiServices.deleteEmpresa(id).subscribe((mensagem: Empresa) => {
     });
-    location.reload();
-    //this.getEmpresas();
     this.dialogRef.close();
   }
 
