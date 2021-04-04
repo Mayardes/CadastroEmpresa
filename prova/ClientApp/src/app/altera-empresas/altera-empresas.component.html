@@ -1,0 +1,32 @@
+<p>Alterar</p>
+
+<form class="example-form" #empresaPost="ngForm" (ngSubmit)="onSubmit(empresaPost.value)">
+
+  <mat-form-field class="example-full-width" hidden="hidden">
+    <mat-label>Id</mat-label>
+    <input matInput [(ngModel)]="empresas.id" placeholder="id" name="id">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="empresas.nome" placeholder="Ex. Josy Assis" name="nome">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>CNPJ</mat-label>
+    <input matInput [(ngModel)]="empresas.cnpj" placeholder="Ex. 11.366.803/0001-80" name="cnpj">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Endereço</mat-label>
+    <input matInput [(ngModel)]="empresas.endereco" placeholder="Ex. Rua Visconde de Porto Alegre" name="endereco">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="empresas.email" placeholder="Ex. joseanefelintojfa@gmail.com" name="email">
+  </mat-form-field>
+
+  <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+

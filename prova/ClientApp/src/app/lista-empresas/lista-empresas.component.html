@@ -34,12 +34,12 @@
 
   <ng-container matColumnDef="Excluir">
     <th mat-header-cell *matHeaderCellDef> Excluir </th>
-    <td mat-cell *matCellDef="let element"> <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a> </td>
+    <td mat-cell *matCellDef="let element"> <a [routerLink]="['/cria-empresas']">Excluir</a> </td>
   </ng-container>
 
   <ng-container matColumnDef="Alterar">
     <th mat-header-cell *matHeaderCellDef> Alterar </th>
-    <td mat-cell *matCellDef="let element"> <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a> </td>
+    <td mat-cell *matCellDef="let element"><a routerLink="/altera-empresas/{{element.id}}">Alterar</a> </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

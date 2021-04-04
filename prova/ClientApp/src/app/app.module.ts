@@ -14,7 +14,8 @@ import { CriaEmpresasComponent } from './cria-empresas/cria-empresas.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatInputModule } from '@angular/material/input';
-import { MatTableModule } from '@angular/material/table'
+import { MatTableModule } from '@angular/material/table';
+import { AlteraEmpresasComponent } from './altera-empresas/altera-empresas.component'
 
 
 
@@ -26,7 +27,8 @@ import { MatTableModule } from '@angular/material/table'
     CounterComponent,
     FetchDataComponent,
     ListaEmpresasComponent,
-    CriaEmpresasComponent
+    CriaEmpresasComponent,
+    AlteraEmpresasComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -41,6 +43,7 @@ import { MatTableModule } from '@angular/material/table'
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'lista-empresas', component: ListaEmpresasComponent },
       { path: 'cria-empresas', component: CriaEmpresasComponent },
+      { path: 'altera-empresas/:id', component: AlteraEmpresasComponent },
     ])
   ],
   providers: [],

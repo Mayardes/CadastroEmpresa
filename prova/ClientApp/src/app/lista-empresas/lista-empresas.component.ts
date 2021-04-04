@@ -13,6 +13,7 @@ export class ListaEmpresasComponent implements OnInit {
 
   empresa = {} as Empresa;
   empresas: Empresa[];
+
   displayedColumns: string[] = ['Id', 'Nome', 'CNPJ', 'Endereco', 'Email', 'Excluir', 'Alterar'];
   dataSource;
 
@@ -21,11 +22,6 @@ export class ListaEmpresasComponent implements OnInit {
   ngOnInit() {
     this.getEmpresas();
   }
-
-  //teste
-
-
-
 
   // defini se um carro será criado ou atualizado
   saveEmpresa(form: NgForm) {
