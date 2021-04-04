@@ -55,8 +55,8 @@ export class ApiService {
   }
 
   // deleta uma empresa
-  deleteEmpresa(empresa: Empresa) {
-    return this.httpClient.delete<Empresa>(this.url + '/' + empresa.id, this.httpOptions)
+  deleteEmpresa(id: number) {
+    return this.httpClient.delete<Empresa>(this.url + '/' + id, this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)

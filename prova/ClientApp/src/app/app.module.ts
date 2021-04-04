@@ -12,10 +12,13 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ListaEmpresasComponent } from './lista-empresas/lista-empresas.component'
 import { CriaEmpresasComponent } from './cria-empresas/cria-empresas.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button'
 
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
-import { AlteraEmpresasComponent } from './altera-empresas/altera-empresas.component'
+import { MatDialogModule } from '@angular/material/dialog';
+import { AlteraEmpresasComponent } from './altera-empresas/altera-empresas.component';
+import { DialogExcluirComponent } from './dialog-excluir/dialog-excluir.component'
 
 
 
@@ -28,7 +31,8 @@ import { AlteraEmpresasComponent } from './altera-empresas/altera-empresas.compo
     FetchDataComponent,
     ListaEmpresasComponent,
     CriaEmpresasComponent,
-    AlteraEmpresasComponent
+    AlteraEmpresasComponent,
+    DialogExcluirComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -37,6 +41,8 @@ import { AlteraEmpresasComponent } from './altera-empresas/altera-empresas.compo
     BrowserAnimationsModule,
     MatInputModule,
     MatTableModule,
+    MatDialogModule,
+    MatButtonModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
@@ -44,6 +50,7 @@ import { AlteraEmpresasComponent } from './altera-empresas/altera-empresas.compo
       { path: 'lista-empresas', component: ListaEmpresasComponent },
       { path: 'cria-empresas', component: CriaEmpresasComponent },
       { path: 'altera-empresas/:id', component: AlteraEmpresasComponent },
+      { path: 'excluir-empresa', component: DialogExcluirComponent },
     ])
   ],
   providers: [],

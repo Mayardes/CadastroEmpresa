@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Empresa } from '../models/empresa';
 import { ApiService } from '../services/api.service';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DialogExcluirComponent } from '../dialog-excluir/dialog-excluir.component';
+
 
 @Component({
   selector: 'app-lista-empresas',
@@ -17,7 +20,7 @@ export class ListaEmpresasComponent implements OnInit {
   displayedColumns: string[] = ['Id', 'Nome', 'CNPJ', 'Endereco', 'Email', 'Excluir', 'Alterar'];
   dataSource;
 
-  constructor(private apiServices: ApiService) { }
+  constructor(private apiServices: ApiService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.getEmpresas();
@@ -39,14 +42,13 @@ export class ListaEmpresasComponent implements OnInit {
   // Chama o serviço para obtém todas as empresas
   getEmpresas() {
     this.apiServices.getEmpresa().subscribe((empresas: Empresa[]) => {
-      console.log(empresas)
       this.dataSource = empresas;
     });
   }
 
   // deleta uma empresa
-  deleteEmpresa(empresa: Empresa) {
-    this.apiServices.deleteEmpresa(empresa).subscribe(() => {
+  deleteEmpresa(id: number) {
+    this.apiServices.deleteEmpresa(id).subscribe(() => {
       this.getEmpresas();
     });
   }
@@ -62,6 +64,18 @@ export class ListaEmpresasComponent implements OnInit {
     form.resetForm();
     this.empresa = {} as Empresa;
   }
+
+  openDialog(item) {
+    const dialogRef = this.dialog.open(DialogExcluirComponent, {
+      width: '250px',
+      data: { id: item}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
 
 
 }

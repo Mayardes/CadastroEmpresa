@@ -1,0 +1,6 @@
+<h1 mat-dialog-title>Hi {{data.id}}</h1>
+<h1 mat-dialog-title>Você deseja excluir este item?</h1>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button (click)="onYesClick(data.id)">Confirmar</button>
+</div>
