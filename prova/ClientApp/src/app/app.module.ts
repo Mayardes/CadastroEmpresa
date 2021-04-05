@@ -19,6 +19,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AlteraEmpresasComponent } from './altera-empresas/altera-empresas.component';
 import { DialogExcluirComponent } from './dialog-excluir/dialog-excluir.component'
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -45,6 +46,7 @@ import { DialogExcluirComponent } from './dialog-excluir/dialog-excluir.componen
     MatTableModule,
     MatDialogModule,
     MatButtonModule,
+    ToastrModule.forRoot(),
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
