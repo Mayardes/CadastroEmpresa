@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Empresa } from '../models/empresa';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../services/api.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-altera-empresas',
@@ -12,7 +13,7 @@ export class AlteraEmpresasComponent implements OnInit {
 
   empresas = {} as Empresa;
 
-  constructor(private apiServices: ApiService, private route: ActivatedRoute) { }
+  constructor(private apiServices: ApiService, private route: ActivatedRoute, private toastr: ToastrService) { }
 
   id = parseInt(this.route.snapshot.paramMap.get('id'));
 
@@ -29,5 +30,11 @@ export class AlteraEmpresasComponent implements OnInit {
   onSubmit(data) {
     this.apiServices.updateEmpresa(data).subscribe(() => {
     });
+    this.showSuccess();
+  }
+
+  showSuccess() {
+    this.toastr.success('Alterar', 'Alterado com sucesso',
+      { timeOut: 2000 });;
   }
 }
