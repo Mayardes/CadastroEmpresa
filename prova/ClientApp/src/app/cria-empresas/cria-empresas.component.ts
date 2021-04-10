@@ -33,7 +33,7 @@ export class CriaEmpresasComponent implements OnInit {
   }
 
   showSuccess() {
-    this.toastr.success('Salvar', 'Gravado com sucesso',
+    this.toastr.success('Gravado com sucesso', 'Salvar',
       { timeOut: 2000 });;
   }
   //showError() {
